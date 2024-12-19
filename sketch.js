@@ -16,9 +16,19 @@ function setup() {
 function draw() {
   background(255, 204, 215);
   
+   
    for (let circle of circles) {
+    circle.x += circle.speedX;
+    circle.y += circle.speedY;
+    
+    if (circle.x > width || circle.x < 0 ) {
+      circle.speedX *= -1;
+    }
+    if (circle.y > height || circle.y < 0) {
+      circle.speedY *= -1;
+    }
     fill(circle.color);
     noStroke();
     ellipse(circle.x, circle.y, circle.size);
   }
-}
+  }

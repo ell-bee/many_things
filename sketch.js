@@ -21,6 +21,9 @@ function draw() {
     circle.x += circle.speedX;
     circle.y += circle.speedY;
     
+    circle.size = 30 + sin(frameCount * 0.05) * 10;
+    circle.color[0] = (circle.color[0] + 1) % 255;
+     
     if (circle.x > width || circle.x < 0 ) {
       circle.speedX *= -1;
     }
